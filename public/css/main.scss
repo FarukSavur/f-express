@@ -1,0 +1,8 @@
+@import 'utils/_color.scss';
+@import 'components/_auth.scss';
+
+body {
+    background-color: $light;
+
+    @include auth();
+}

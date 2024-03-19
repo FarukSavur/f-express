@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('Admin/index');
 });
 
-Route::get('/giris-yap', [authController::class, 'loginIndex']);
+Route::get('/giris-yap', [authController::class, 'loginIndex'])->name('login.index');
+Route::get('/kayit-ol', [authController::class, 'registerIndex'])->name('register.index');
+Route::post('/kayit-ol', [authController::class, 'registerStore'])->name('register.store');

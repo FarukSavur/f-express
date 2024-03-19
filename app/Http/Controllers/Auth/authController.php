@@ -11,4 +11,14 @@ class authController extends Controller
     {
         return view('Auth/Login');
     }
+
+    public function registerIndex()
+    {
+        return view('Auth/Register');
+    }
+
+    public function registerStore(Request $request)
+    {
+        dd($request->all());
+    }
 }
