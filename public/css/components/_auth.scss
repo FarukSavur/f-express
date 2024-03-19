@@ -1,18 +1,112 @@
 @mixin auth() {
     #auth {
         form {
+            h5 {
+                padding-left: .3rem;
+                border-left: .2rem solid $info;
+                margin-bottom: 1.5rem;
+            }
+
             .input-container {
-                margin-bottom: .8rem;
+                margin-bottom: 1rem;
 
                 .input {
                     position: relative;
+
+                    &.is-invalid {
+                        input {
+                            border-color: $danger;
+                        }
+
+                        i {
+                            color: $danger;
+                        }
+                    }
+
+                    input {
+                        box-shadow: none;
+                        background-color: $light;
+                        border-color: $border-light;
+
+
+                        &:focus,
+                        &:valid {
+                            border-color: $info;
+
+                            &+label {
+                                top: 0;
+                                left: .5rem;
+                                visibility: visible;
+                                opacity: 1;
+                                font-size: .7rem;
+                                color: $light;
+                                background-color: $info;
+                            }
+
+                            &+label+i {
+                                color: $info;
+                            }
+
+                        }
+                    }
+
+                    label {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: .2rem;
+                        transition: .35s all;
+                        background-color: transparent;
+                        padding: 0 .6rem;
+                        border-radius: .3rem;
+                        color: $secondary;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
 
                     i {
                         position: absolute;
                         top: 50%;
                         transform: translateY(-50%);
                         right: .5rem;
+                        transition: .3s color;
                     }
+                }
+
+                span {
+                    font-size: .9rem;
+                    color: $danger;
+                }
+            }
+        }
+
+        .or-container {
+            text-align: center;
+
+            a {
+                color: $info;
+                text-decoration: none;
+            }
+
+            .or {
+                display: grid;
+                grid-template-columns: 1fr auto 1fr;
+                align-items: center;
+                gap: 1rem;
+
+                &::before,
+                &::after {
+                    content: '';
+                    height: .1rem;
+                    flex: 1;
+                }
+
+                &::before {
+                    background: linear-gradient(to right, transparent, rgba($info, .5));
+                }
+
+                &::after {
+                    background: linear-gradient(to left, transparent, rgba($info, .5));
                 }
             }
         }

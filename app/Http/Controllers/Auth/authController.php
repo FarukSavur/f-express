@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\Request;
 
 class authController extends Controller
@@ -17,8 +18,8 @@ class authController extends Controller
         return view('Auth/Register');
     }
 
-    public function registerStore(Request $request)
+    public function registerStore(RegisterRequest $request)
     {
-        dd($request->all());
+        dd($request->validated());
     }
 }

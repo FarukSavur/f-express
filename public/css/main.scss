@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols:wght@100..900&display=swap');
 @import 'utils/_color.scss';
 @import 'components/_auth.scss';
 
 body {
     background-color: $light;
-
+    font-family: "Noto Sans Symbols", sans-serif;
     @include auth();
 }
