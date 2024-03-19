@@ -3,5 +3,12 @@
 @section('title', 'Yönetim Paneli')
 
 @section('content')
-<p>Yönetim Paneli</p>
+<div class="container">
+    <div class="row">
+
+        <h5 class="mt-4">Yönetim Paneli</h5>
+
+    </div>
+
+</div>
 @endsection
