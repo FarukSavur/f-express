@@ -1,6 +1,15 @@
-var swiper6 = new Swiper(".mySwiper6", {
+var swiper6 = new Swiper(".loginRegisterSwiper", {
     grabCursor: true,
     effect: "creative",
+    loop: true,
+    autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+    },
     creativeEffect: {
         prev: {
             shadow: true,

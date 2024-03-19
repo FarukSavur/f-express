@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="row" id="auth">
-    <div class="col-12 col-md-6 offset-md-3 mt-4 mt-md-5 ">
+    <div class="col-12 col-md-4 offset-md-4 mt-4 mt-md-5 ">
         <form action="{{route('register.store')}}" method="POST">
             @csrf
             <h5>Yeni Hesap Oluştur</h5>
@@ -40,7 +40,7 @@
             </div>
             <div class="input-container">
                 <div class="input @error('password') is-invalid @enderror">
-                    <input type="password" placeholder="Şifreniz" class="form-control" name="password" id="password" required minlength="6" maxlength="50">
+                    <input type="password" placeholder="Şifreniz" class="form-control" name="password" id="password" value="{{ old('password') }}" required minlength="6" maxlength="50">
                     <label for="password">Şifreniz</label>
                     <i class="fa-regular fa-eye"></i>
                 </div>
@@ -54,22 +54,41 @@
         </form>
 
         <div class="or-container">
-            <div class="or mt-4">Zaten bir hesabım var?</div>
+            <div class="or mt-4">Zaten bir hesabım var</div>
             <a href="/giris-yap">Giriş yap</a>
         </div>
 
         <div class="swiper mySwiper6">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
-                <div class="swiper-slide">Slide 5</div>
-                <div class="swiper-slide">Slide 6</div>
-                <div class="swiper-slide">Slide 7</div>
-                <div class="swiper-slide">Slide 8</div>
-                <div class="swiper-slide">Slide 9</div>
+                <div class="swiper-slide">
+                    <div class="shape">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h5>Hızlı Teslimat</h5>
+                    <p>
+                        Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.
+                    </p>
+                </div>
+                <div class="swiper-slide">
+                    <div class="shape">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h5>Güvenlik</h5>
+                    <p>
+                        Yinelenen bir sayfa içeriğinin okuyucunun dikkatini dağıttığı bilinen bir gerçektir. Lorem Ipsum kullanmanın amacı, sürekli 'buraya metin gelecek, buraya metin gelecek' yazmaya kıyasla daha dengeli bir harf dağılımı sağlayarak okunurluğu artırmasıdır.
+                    </p>
+                </div>
+                <div class="swiper-slide">
+                    <div class="shape">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <h5>Kesintisiz Hizmet</h5>
+                    <p>
+                        Lorem Ipsum pasajlarının birçok çeşitlemesi vardır. Ancak bunların büyük bir çoğunluğu mizah katılarak veya rastgele sözcükler eklenerek değiştirilmişlerdir. Eğer bir Lorem Ipsum pasajı kullanacaksanız, metin aralarına utandırıcı sözcükler gizlenmediğinden emin olmanız gerekir.
+                    </p>
+                </div>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
 </div>

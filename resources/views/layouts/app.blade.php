@@ -12,19 +12,19 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             @section('sidebar')
-            <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm rounded-bottom-2 ">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm ">
                 <div class="container">
-                    <a class="navbar-brand" href="/">Fast Express</a>
+                    <a class="navbar-brand" href="/kargo-gonderileri">Fast Express</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarScroll">
                         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/">Anasayfa</a>
+                                <a class="nav-link active" aria-current="page" href="/kargo-gonderileri">Anasayfa</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/kargo-gonderileri">Kargo Gönderileri</a>
@@ -33,9 +33,16 @@
                                 <a class="nav-link" href="/kargo-gonderileri/yeni-kargo">Kargo Gönderisi Oluştur</a>
                             </li>
                         </ul>
+                        @if(Auth::user())
                         <div class="d-flex">
-                            <a href="/giris-yap" class="btn btn-outline-info" type="submit">Giriş yap</a>
+                            {{Auth::user()->name}}, <a href="/cikis-yap" class="text-danger text-decoration-none ms-1">çıkış yap!</a>
                         </div>
+                        @else
+                        <div class="d-flex gap-2">
+                            <a href="/kayit-ol" class="btn btn-sm btn-outline-primary" type="submit">Kayıt Ol</a>
+                            <a href="/giris-yap" class="btn btn-sm btn-outline-info" type="submit">Giriş yap</a>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </nav>

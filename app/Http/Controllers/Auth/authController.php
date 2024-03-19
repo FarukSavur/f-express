@@ -3,14 +3,30 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
-use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class authController extends Controller
 {
     public function loginIndex()
     {
         return view('Auth/Login');
+    }
+
+    public function loginStore(LoginRequest $request)
+    {   
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+            return to_route('cargo.index');
+        }
+        return back()->with('message', 'E-posta ya da şifre yanlış.');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return to_route('register.index');
     }
 
     public function registerIndex()
@@ -20,6 +36,9 @@ class authController extends Controller
 
     public function registerStore(RegisterRequest $request)
     {
-        dd($request->validated());
+        $user = User::create($request->validated());
+        Auth::login($user);
+
+        return to_route('cargo.index');
     }
 }
