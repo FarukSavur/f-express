@@ -26,7 +26,7 @@ class authController extends Controller
     public function logout()
     {
         Auth::logout();
-        return to_route('register.index');
+        return to_route('login.index');
     }
 
     public function registerIndex()
