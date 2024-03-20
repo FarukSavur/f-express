@@ -16,7 +16,7 @@ class authController extends Controller
     }
 
     public function loginStore(LoginRequest $request)
-    {   
+    {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             return to_route('cargo.index');
         }
@@ -26,7 +26,7 @@ class authController extends Controller
     public function logout()
     {
         Auth::logout();
-        return to_route('login.index');
+        return to_route('login.index')->with('logout', 'Hesabınız güvenli bir şekilde kapatıldı.');
     }
 
     public function registerIndex()
