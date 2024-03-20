@@ -1,0 +1,177 @@
+@mixin cargo() {
+    #cargo {
+        .cargo-container {
+            .cargo-item {
+                background-color: $white;
+                box-shadow: 0 .125rem .20rem rgba(0, 0, 0, .075);
+                border-radius: .5rem;
+
+                .header {
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 1px solid $darkenlight;
+                    padding: .8rem;
+                    justify-content: space-between;
+
+                    h6 {
+                        margin-bottom: 0;
+                    }
+
+                }
+
+                .content {
+                    padding: .8rem;
+
+                    .item {
+                        margin-bottom: .7rem;
+
+                        h6 {
+                            margin-bottom: .1rem;
+                            padding-left: .3rem;
+                            border-left: .2rem solid rgba($info, .5);
+                        }
+
+                        span {
+                            font-size: .9rem;
+                        }
+                    }
+                }
+
+                .footer {
+                    padding: .8rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    font-size: .8rem;
+                    opacity: .9;
+                    border-top: 1px solid $darkenlight;
+                }
+
+
+
+            }
+        }
+
+        form {
+            .input-container {
+                margin-bottom: 1rem;
+
+                .input {
+                    position: relative;
+
+                    &.is-invalid {
+                        input {
+                            border-color: $danger;
+                        }
+
+                        i {
+                            color: $danger;
+                        }
+                    }
+
+                    input[type=number]::-webkit-inner-spin-button,
+                    input[type=number]::-webkit-outer-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+
+                    input[type=number] {
+                        -moz-appearance: textfield;
+                    }
+
+                    input,
+                    textarea {
+                        box-shadow: none;
+                        background-color: $light;
+                        border-color: $border-light;
+
+                        &:focus,
+                        &:valid {
+                            border-color: $info;
+
+                            &+label {
+                                top: 0;
+                                left: .5rem;
+                                visibility: visible;
+                                opacity: 1;
+                                font-size: .7rem;
+                                color: $light;
+                                background-color: $info;
+                            }
+
+                            &+label+i {
+                                color: $info;
+                            }
+
+                        }
+                    }
+
+                    label {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: .2rem;
+                        transition: .35s all;
+                        background-color: transparent;
+                        padding: 0 .6rem;
+                        border-radius: .3rem;
+                        color: $secondary;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    i {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: .5rem;
+                        transition: .3s color;
+                        background-color: $light;
+                        z-index: 10;
+                    }
+                }
+
+                span {
+                    font-size: .9rem;
+                    color: $danger;
+                }
+            }
+        }
+
+        #pagination {
+            nav {
+                ul.pagination {
+                    li.page-item {
+                        &.active {
+                            .page-link {
+                                background-color: $info;
+                                color: $light;
+                                border-color: rgba($info, .1);
+
+                            }
+                        }
+
+                        &.disabled {
+                            .page-link {
+                                opacity: .5;
+                            }
+                        }
+
+                        .page-link {
+                            color: $info;
+                            background-color: rgba($info, .1);
+                            border-radius: 50%;
+                            width: 2rem;
+                            height: 2rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 0 .1rem;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

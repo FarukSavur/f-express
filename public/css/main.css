@@ -127,4 +127,135 @@ body #auth .swiper .swiper-slide p {
 }
 body #auth .swiper .swiper-pagination .swiper-pagination-bullet {
   background-color: #0dcaf0;
+}
+body #cargo .cargo-container .cargo-item {
+  background-color: #ffffff;
+  box-shadow: 0 0.125rem 0.2rem rgba(0, 0, 0, 0.075);
+  border-radius: 0.5rem;
+}
+body #cargo .cargo-container .cargo-item .header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eff1f4;
+  padding: 0.8rem;
+  justify-content: space-between;
+}
+body #cargo .cargo-container .cargo-item .header h6 {
+  margin-bottom: 0;
+}
+body #cargo .cargo-container .cargo-item .content {
+  padding: 0.8rem;
+}
+body #cargo .cargo-container .cargo-item .content .item {
+  margin-bottom: 0.7rem;
+}
+body #cargo .cargo-container .cargo-item .content .item h6 {
+  margin-bottom: 0.1rem;
+  padding-left: 0.3rem;
+  border-left: 0.2rem solid rgba(13, 202, 240, 0.5);
+}
+body #cargo .cargo-container .cargo-item .content .item span {
+  font-size: 0.9rem;
+}
+body #cargo .cargo-container .cargo-item .footer {
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.8rem;
+  opacity: 0.9;
+  border-top: 1px solid #eff1f4;
+}
+body #cargo form .input-container {
+  margin-bottom: 1rem;
+}
+body #cargo form .input-container .input {
+  position: relative;
+}
+body #cargo form .input-container .input.is-invalid input {
+  border-color: #dc3545;
+}
+body #cargo form .input-container .input.is-invalid i {
+  color: #dc3545;
+}
+body #cargo form .input-container .input input[type=number]::-webkit-inner-spin-button,
+body #cargo form .input-container .input input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body #cargo form .input-container .input input[type=number] {
+  -moz-appearance: textfield;
+}
+body #cargo form .input-container .input input,
+body #cargo form .input-container .input textarea {
+  box-shadow: none;
+  background-color: #f8f9fa;
+  border-color: rgba(33, 37, 41, 0.1);
+}
+body #cargo form .input-container .input input:focus, body #cargo form .input-container .input input:valid,
+body #cargo form .input-container .input textarea:focus,
+body #cargo form .input-container .input textarea:valid {
+  border-color: #0dcaf0;
+}
+body #cargo form .input-container .input input:focus + label, body #cargo form .input-container .input input:valid + label,
+body #cargo form .input-container .input textarea:focus + label,
+body #cargo form .input-container .input textarea:valid + label {
+  top: 0;
+  left: 0.5rem;
+  visibility: visible;
+  opacity: 1;
+  font-size: 0.7rem;
+  color: #f8f9fa;
+  background-color: #0dcaf0;
+}
+body #cargo form .input-container .input input:focus + label + i, body #cargo form .input-container .input input:valid + label + i,
+body #cargo form .input-container .input textarea:focus + label + i,
+body #cargo form .input-container .input textarea:valid + label + i {
+  color: #0dcaf0;
+}
+body #cargo form .input-container .input label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.2rem;
+  transition: 0.35s all;
+  background-color: transparent;
+  padding: 0 0.6rem;
+  border-radius: 0.3rem;
+  color: #6c757d;
+  opacity: 0;
+  visibility: hidden;
+}
+body #cargo form .input-container .input i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0.5rem;
+  transition: 0.3s color;
+  background-color: #f8f9fa;
+  z-index: 10;
+}
+body #cargo form .input-container span {
+  font-size: 0.9rem;
+  color: #dc3545;
+}
+body #cargo #pagination nav ul.pagination li.page-item.active .page-link {
+  background-color: #0dcaf0;
+  color: #f8f9fa;
+  border-color: rgba(13, 202, 240, 0.1);
+}
+body #cargo #pagination nav ul.pagination li.page-item.disabled .page-link {
+  opacity: 0.5;
+}
+body #cargo #pagination nav ul.pagination li.page-item .page-link {
+  color: #0dcaf0;
+  background-color: rgba(13, 202, 240, 0.1);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.1rem;
+  padding: 0;
 }/*# sourceMappingURL=main.css.map */

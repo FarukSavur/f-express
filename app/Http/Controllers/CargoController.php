@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CargoRequest;
 use App\Models\Cargo;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,11 @@ class CargoController extends Controller
      */
     public function index()
     {
-        return view('Admin/index');
+        $cargos =  Cargo::where('status', 1)
+            ->orderBy('id', "desc")
+            ->paginate(10);
+
+        return view('Admin/index', compact('cargos'));
     }
 
     /**
@@ -20,15 +25,16 @@ class CargoController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin/create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CargoRequest $request)
     {
-        //
+        $cargo =  Cargo::create($request->validated());
+        return to_route('cargo.show', $cargo->id);
     }
 
     /**
@@ -36,7 +42,7 @@ class CargoController extends Controller
      */
     public function show(Cargo $cargo)
     {
-        //
+        return view('Admin/show', compact('cargo'));
     }
 
     /**
@@ -44,15 +50,16 @@ class CargoController extends Controller
      */
     public function edit(Cargo $cargo)
     {
-        //
+        return view('Admin/edit', compact('cargo'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cargo $cargo)
+    public function update(CargoRequest $request, Cargo $cargo)
     {
-        //
+        $cargo->update($request->validated());
+        return to_route('cargo.show', $cargo->id)->with('updated', 'Kargo bilgileri güncellendi.');
     }
 
     /**
@@ -60,6 +67,7 @@ class CargoController extends Controller
      */
     public function destroy(Cargo $cargo)
     {
-        //
+        $cargo->delete();
+        return to_route('cargo.index')->with('message', 'Kargo gönderisi silindi.');
     }
 }

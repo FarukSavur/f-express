@@ -16,12 +16,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//main routes
+
+Route::get('/', function () {
+    return view('index');
+});
+
 //auth routes
 Route::middleware(['auth'])->group(function () {
     Route::prefix('kargo-gonderileri')->as('cargo.')->group(function () {
         Route::get('/', [CargoController::class, 'index'])->name('index');
+        Route::get('/yeni-kargo', [CargoController::class, 'create'])->name('create');
+        Route::post('/yeni-kargo', [CargoController::class, 'store'])->name('store');
+        Route::get('/{cargo}/duzenle', [CargoController::class, 'edit'])->name('edit');
+        Route::put('/{cargo}/duzenle', [CargoController::class, 'update'])->name('update');
+        Route::get('/{cargo}', [CargoController::class, 'show'])->name('show');
+        Route::delete('/{cargo}/kargo-sil', [CargoController::class, 'destroy'])->name('destroy');
     });
-
     Route::get('/cikis-yap', [authController::class, 'logout'])->name('login.destroy');
 });
 

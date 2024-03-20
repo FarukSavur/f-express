@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('user_surname');
             $table->string('product_name');
             $table->string('product_content');
-            $table->unsignedBigInteger('product_kilogram');
+            $table->double('product_kilogram');
             $table->text('product_description');
             $table->boolean('status')->default(1);
             $table->timestamps();

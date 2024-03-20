@@ -58,7 +58,7 @@
             <a href="/giris-yap">Giriş yap</a>
         </div>
 
-        <div class="swiper mySwiper6">
+        <div class="swiper loginRegisterSwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="shape">
