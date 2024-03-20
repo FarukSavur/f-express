@@ -17,6 +17,14 @@ Fast Express Test Case [fast-express](https://testproje.website/giris-yap) üzer
 + Users api (get)
   * https://testproje.website/api/users
 
+## Postman önizleme
+##### Doğru bilgiler ile post işlemi
+![postman 1](./public/screen-shots/postman-1.png)
+
+##### Yanlış bilgiler ile post işlemi
+![postman 2](./public/screen-shots/postman-2.png)
+ 
+
 ## Local İçin Kullanım
 ```
 git clone https://github.com/FarukSavur/f-express.git
@@ -29,14 +37,6 @@ composer install
 ```
 npm install
 ```
-
-## Postman önizleme
-##### Doğru bilgiler ile post işlemi
-![postman 1](./public/screen-shots/postman-1.png)
-
-##### Yanlış bilgiler ile post işlemi
-![postman 2](./public/screen-shots/postman-2.png)
-
 
 * Önce *fast_express* adında bir ( *utf8mb4_unicode_ci* ) database oluşturuyoruz.
 * Sonrasında url'e *http://127.0.0.1:8000/seed* yazarak tabloların database'e eklenmesine ve fake datalarında tablolara eklenmesini sağlıyoruz.
