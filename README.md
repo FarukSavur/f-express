@@ -1,4 +1,4 @@
-# Fast Express Test Case 🔥
+# Fast Express Test Case
 
 * Login api laravel 10 kullanılarak yazıldı. Validasyon işlemleri yapıldı. Ek olarak ***users route*** eklendi ve kayıtlı olan kullanıcılar json formatında listelendi.
 * Giriş yap, kayıt ol, yeni kargo ekle, var olan kargoları listeleme yapıldı. Ek olarak ***güncelleme*** ve ***silme*** işlemi yapıldı. Kargoların listelendiği sayfa ***laravel pagination*** kullanılarak sayfa açılış hızı artırıldı ve özelleştirildi.
